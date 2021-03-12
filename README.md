@@ -2,7 +2,7 @@
 Trying out deno and oak
 
 Run with:
-deno run --allow-network --allow-read mod.ts
+deno run --allow-net --allow-read mod.ts
 
 Run test with:
-deno test --allow-network --allow-read mod.ts
+deno test --allow-net --allow-read mod.ts
