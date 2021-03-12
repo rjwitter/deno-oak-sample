@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Oak Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+  <body>
+    <div class="container bg-dark text-center text-light rounded-bottom">
+      <h2>Oak Test</h2>
+    </div>
+    <div class="container">
+      <h5>Headers</h5>
+      <div class="container bg-light rounded">
+        <ul>
+          <% data.headers.map((h) => { %>
+            <li><%= h %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h5>Params</h5>
+      <div class="container bg-light rounded">
+        <ul>
+          <% data.params.map((h) => { %>
+            <li><%= h %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h5>Context params</h5>
+      <div class="container bg-light rounded">
+        <ul>
+          <% data.contextParams.map((h) => { %>
+            <li><%= h %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h5>Cookies</h5>
+      <div class="container bg-light rounded">
+        <% data.cookies.map((h) => { %>
+          <li><%= h %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
