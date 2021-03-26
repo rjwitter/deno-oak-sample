@@ -1,4 +1,4 @@
-// deno run --allow-net --allow-read .deno/oak-app/mod.ts
+#!/usr/bin/env deno run --allow-net --allow-read
 
 import {
   Application,
