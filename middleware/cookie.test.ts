@@ -1,6 +1,8 @@
-import { assertEquals, assertMatch } from 'https://deno.land/std@0.89.0/testing/asserts.ts';
-import { RouterContext } from 'https://deno.land/x/oak@v6.2.0/mod.ts';
-
+import {
+  assertEquals,
+  assertMatch,
+  RouterContext,
+} from '../deps.ts';
 import { cookieFn } from './cookie.ts';
 
 class TestIterableIterator implements IterableIterator<string[]> {

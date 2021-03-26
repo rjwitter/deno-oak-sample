@@ -1,6 +1,7 @@
-import { assertEquals } from "https://deno.land/std@0.89.0/testing/asserts.ts";
-import { RouterContext } from 'https://deno.land/x/oak@v6.2.0/mod.ts';
-
+import {
+  assertEquals,
+  RouterContext,
+} from '../deps.ts';
 import { contextParamsFn } from './context_params.ts';
 
 Deno.test('add context params to context state', async () => {

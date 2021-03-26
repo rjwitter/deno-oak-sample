@@ -1,4 +1,4 @@
-import { Context } from 'https://deno.land/x/oak@v6.2.0/mod.ts';
+import { Context } from '../deps.ts';
 
 export const renderFn = (ctx: Context, next: () => Promise<void>) => {
   ctx.render('oak-test', {

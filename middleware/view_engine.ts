@@ -1,5 +1,9 @@
-import { dirname } from 'https://deno.land/std@0.89.0/path/mod.ts';
-import { adapterFactory, engineFactory, viewEngine } from 'https://deno.land/x/view_engine@v1.4.5/mod.ts';
+import {
+  adapterFactory,
+  dirname, 
+  engineFactory,
+  viewEngine
+} from '../deps.ts';
 
 const viewRoot = dirname(new URL(import.meta.url).pathname) + '/../view';
 const ejsEngine = engineFactory.getEjsEngine();

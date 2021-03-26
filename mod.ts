@@ -4,8 +4,8 @@ import {
   Application,
   Context,
   Router,
-} from 'https://deno.land/x/oak@v6.2.0/mod.ts';
-import logger from 'https://deno.land/x/oak_logger/mod.ts';
+  logger,
+ } from './deps.ts';
 
 import { contextParamsFn } from './middleware/context_params.ts';
 import { cookieFn } from './middleware/cookie.ts';
