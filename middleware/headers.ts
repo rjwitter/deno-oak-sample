@@ -1,4 +1,4 @@
-import { Context } from '../deps.ts';
+import { Context } from "../deps.ts";
 
 export const headersFn = async (ctx: Context, next: () => Promise<void>) => {
   ctx.state.headers = [];
@@ -7,4 +7,4 @@ export const headersFn = async (ctx: Context, next: () => Promise<void>) => {
   }
   await next();
   delete ctx.state.headers;
-};  
+};

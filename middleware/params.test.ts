@@ -1,8 +1,5 @@
-import {
-  assertEquals,
-  RouterContext
-} from '../deps.ts';
-import { paramsFn } from './params.ts';
+import { assertEquals, RouterContext } from "../deps.ts";
+import { paramsFn } from "./params.ts";
 
 class TestIterableIterator implements IterableIterator<string[]> {
   values: string[][] = [];
@@ -15,8 +12,8 @@ class TestIterableIterator implements IterableIterator<string[]> {
 
   public next(): IteratorResult<string[]> {
     if (this.index < this.values.length) {
-      return { done: false, value: this.values[this.index++]};
-      }
+      return { done: false, value: this.values[this.index++] };
+    }
     return { done: true, value: null };
   }
 
@@ -25,8 +22,11 @@ class TestIterableIterator implements IterableIterator<string[]> {
   }
 }
 
-Deno.test('add params to context state', async () => {
-  const paramsIterableIterator = new TestIterableIterator([[ 'key1', 'val1' ], [ 'key2', 'val2' ]]);
+Deno.test("add params to context state", async () => {
+  const paramsIterableIterator = new TestIterableIterator([["key1", "val1"], [
+    "key2",
+    "val2",
+  ]]);
   const routerContext = {
     request: {
       url: {
@@ -36,14 +36,17 @@ Deno.test('add params to context state', async () => {
     state: {},
   } as unknown as RouterContext;
 
-  await paramsFn(routerContext, () => { 
-    assertEquals(routerContext.state, { params: ['key1: val1', 'key2: val2']});
+  await paramsFn(routerContext, () => {
+    assertEquals(routerContext.state, { params: ["key1: val1", "key2: val2"] });
     return Promise.resolve();
   });
 });
 
-Deno.test('params are removed', async () => {
-  const paramsIterableIterator = new TestIterableIterator([[ 'key1', 'val1' ], [ 'key2', 'val2' ]]);
+Deno.test("params are removed", async () => {
+  const paramsIterableIterator = new TestIterableIterator([["key1", "val1"], [
+    "key2",
+    "val2",
+  ]]);
   const routerContext = {
     request: {
       url: {
@@ -55,6 +58,6 @@ Deno.test('params are removed', async () => {
 
   await paramsFn(routerContext, () => {
     return Promise.resolve();
-  })
+  });
   assertEquals(routerContext.state, {});
 });

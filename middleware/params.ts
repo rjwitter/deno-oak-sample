@@ -1,4 +1,4 @@
-import { Context } from '../deps.ts';
+import { Context } from "../deps.ts";
 
 export const paramsFn = async (ctx: Context, next: () => Promise<void>) => {
   ctx.state.params = [];

@@ -1,8 +1,5 @@
-import {
-  assertEquals,
-  RouterContext,
-} from '../deps.ts';
-import { headersFn } from './headers.ts';
+import { assertEquals, RouterContext } from "../deps.ts";
+import { headersFn } from "./headers.ts";
 
 class TestIterableIterator implements IterableIterator<string[]> {
   values: string[][] = [];
@@ -11,11 +8,11 @@ class TestIterableIterator implements IterableIterator<string[]> {
   constructor(values: string[][]) {
     this.values = values;
   }
- 
+
   public next(): IteratorResult<string[]> {
     if (this.index < this.values.length) {
-      return { done: false, value: this.values[this.index++]};
-      }
+      return { done: false, value: this.values[this.index++] };
+    }
     return { done: true, value: null };
   }
 
@@ -24,8 +21,11 @@ class TestIterableIterator implements IterableIterator<string[]> {
   }
 }
 
-Deno.test('add headers to context state', async () => {
-  const headerIterableIterator = new TestIterableIterator([[ 'key1', 'val1' ], [ 'key2', 'val2' ]]);
+Deno.test("add headers to context state", async () => {
+  const headerIterableIterator = new TestIterableIterator([["key1", "val1"], [
+    "key2",
+    "val2",
+  ]]);
 
   const routerContext = {
     request: {
@@ -34,13 +34,18 @@ Deno.test('add headers to context state', async () => {
     state: {},
   } as unknown as RouterContext;
   await headersFn(routerContext, () => {
-    assertEquals(routerContext.state, { headers: ['key1: val1', 'key2: val2']});
+    assertEquals(routerContext.state, {
+      headers: ["key1: val1", "key2: val2"],
+    });
     return Promise.resolve();
   });
 });
 
-Deno.test('remove headers from context state after next()', async () => {
-  const headerIterableIterator = new TestIterableIterator([[ 'key1', 'val1' ], [ 'key2', 'val2' ]]);
+Deno.test("remove headers from context state after next()", async () => {
+  const headerIterableIterator = new TestIterableIterator([["key1", "val1"], [
+    "key2",
+    "val2",
+  ]]);
 
   const routerContext = {
     request: {

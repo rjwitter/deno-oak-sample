@@ -1,4 +1,4 @@
-import { Context } from '../deps.ts';
+import { Context } from "../deps.ts";
 
 export const errorHandler = (ctx: Context, next: () => Promise<void>) => {
   try {
