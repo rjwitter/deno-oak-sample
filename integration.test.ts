@@ -5,7 +5,7 @@ import {
   assertMatch,
 } from "https://deno.land/std@0.89.0/testing/asserts.ts";
 
-Deno.test("/blah returns Blah", async () => {
+Deno.test("/hello returns 'Hello World!'", async () => {
   const request = await superoak(app);
   await request.get("/hello").expect("Hello World!");
 });
