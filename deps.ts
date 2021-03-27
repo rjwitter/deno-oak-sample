@@ -1,8 +1,4 @@
 export { dirname } from "https://deno.land/std@0.89.0/path/mod.ts";
-export {
-  assertEquals,
-  assertMatch,
-} from "https://deno.land/std@0.89.0/testing/asserts.ts";
 
 export {
   Application,

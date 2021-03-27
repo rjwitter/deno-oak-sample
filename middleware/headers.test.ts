@@ -1,4 +1,5 @@
-import { assertEquals, RouterContext } from "../deps.ts";
+import { RouterContext } from "../deps.ts";
+import { assertEquals } from "../dev_deps.ts";
 import { headersFn } from "./headers.ts";
 
 class TestIterableIterator implements IterableIterator<string[]> {

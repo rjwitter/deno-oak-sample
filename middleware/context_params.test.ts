@@ -1,4 +1,5 @@
-import { assertEquals, RouterContext } from "../deps.ts";
+import { RouterContext } from "../deps.ts";
+import { assertEquals } from "../dev_deps.ts";
 import { contextParamsFn } from "./context_params.ts";
 
 Deno.test("add context params to context state", async () => {

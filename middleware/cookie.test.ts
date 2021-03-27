@@ -1,4 +1,5 @@
-import { assertEquals, assertMatch, RouterContext } from "../deps.ts";
+import { RouterContext } from "../deps.ts";
+import { assertEquals, assertMatch } from "../dev_deps.ts";
 import { cookieFn } from "./cookie.ts";
 
 class TestIterableIterator implements IterableIterator<string[]> {
