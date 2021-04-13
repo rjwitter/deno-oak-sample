@@ -9,7 +9,7 @@ deno run --allow-net --allow-read mod.ts
 
 Run tests with:
 ```bash
-deno test --allow-net --allow-read mod.ts
+deno test --allow-net --allow-read
 ```
 
 Oak Middleware adds these things from the HTTP request to the context state:
